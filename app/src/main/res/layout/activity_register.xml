@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.RegisterActivity">
+
+    <ProgressBar
+        android:id="@+id/register_loading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:indeterminateTint="@color/lime_green"
+        style="?android:attr/progressBarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/register_image"
+        android:layout_width="350dp"
+        android:layout_height="320dp"
+        android:src="@drawable/register"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/register_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_login"
+        android:textSize="20sp"
+        android:fontFamily="@font/sfpro_display_bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/register_image"
+        app:layout_constraintStart_toStartOf="@id/register_image"
+        app:layout_constraintEnd_toEndOf="@id/register_image" />
+
+    <TextView
+        android:id="@+id/register_login1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_create"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/register_image"
+        app:layout_constraintEnd_toEndOf="@id/register_image"
+        app:layout_constraintTop_toBottomOf="@id/register_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_login"
+        android:textSize="20sp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/register_email_input"
+        app:layout_constraintBottom_toTopOf="@id/register_email_input"/>
+
+    <com.riski.greenadvisor.customview.EditTextEmail
+        android:id="@+id/register_email_input"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:textSize="18sp"
+        android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:drawablePadding="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:minHeight="47dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="@drawable/ic_bg_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_name_input" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_name"
+        android:textSize="20sp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/register_name_input"
+        app:layout_constraintBottom_toTopOf="@id/register_name_input"/>
+
+    <com.riski.greenadvisor.customview.EditTextName
+        android:id="@+id/register_name_input"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:drawableStart="@drawable/ic_account_circle"
+        android:drawablePadding="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:minHeight="47dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_bg_email"
+        app:layout_constraintTop_toBottomOf="@id/register_login1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password_login"
+        android:textSize="20sp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/register_password_input"
+        app:layout_constraintBottom_toTopOf="@id/register_password_input"/>
+
+    <com.riski.greenadvisor.customview.EditTextPassword
+        android:id="@+id/register_password_input"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ic_bg_email"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:paddingEnd="5dp"
+        android:paddingStart="10dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:textSize="18sp"
+        android:minHeight="47dp"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/register_email_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.riski.greenadvisor.customview.ButtonRegister
+        android:id="@+id/register_btn"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_btn"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_ready" />
+
+    <TextView
+        android:id="@+id/register_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_ready_account"
+        app:layout_constraintTop_toBottomOf="@id/register_password_input"
+        app:layout_constraintEnd_toEndOf="@id/register_password_input"
+        android:layout_marginTop="5dp"
+        style="@style/Register" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

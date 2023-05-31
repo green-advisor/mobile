@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <ProgressBar
+        android:id="@+id/login_loading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="43dp"
+        android:indeterminateTint="@color/lime_green"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/login_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/login_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sfpro_display_bold"
+        android:text="@string/welcome_login"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_image" />
+
+    <TextView
+        android:id="@+id/login_welcome_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:text="@string/welcome_login1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_welcome" />
+
+    <TextView
+        android:id="@+id/login_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:text="@string/email_login"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/login_email"
+        app:layout_constraintTop_toBottomOf="@id/login_welcome_1" />
+
+    <com.riski.greenadvisor.customview.EditTextEmail
+        android:id="@+id/login_email"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_bg_email"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:drawablePadding="5dp"
+        android:focusable="true"
+        android:minHeight="47dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:textColorHint="#757575"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_email_text" />
+
+    <TextView
+        android:id="@+id/login_password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:text="@string/password_login"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/login_password"
+        app:layout_constraintTop_toBottomOf="@id/login_email" />
+
+    <com.riski.greenadvisor.customview.EditTextPassword
+        android:id="@+id/login_password"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_bg_email"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="5dp"
+        android:focusable="true"
+        android:minHeight="47dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:textColorHint="#757575"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_password_text" />
+
+    <com.riski.greenadvisor.customview.ButtonLogin
+        android:id="@+id/login_button"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_have" />
+
+        <TextView
+        android:id="@+id/login_have"
+        style="@style/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/have_account"
+        app:layout_constraintEnd_toEndOf="@id/login_password"
+        app:layout_constraintTop_toBottomOf="@id/login_password" />
+
+    <TextView
+        android:id="@+id/permission1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:text="@string/permission1"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/login_permission2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/sfpro_display_bold"
+        android:text="@string/permission2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/permission1" />
+
+    <TextView
+        android:id="@+id/permission3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/permission3"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/login_permission2" />
+
+    <TextView
+        android:id="@+id/permission4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/sfpro_display_bold"
+        android:text="@string/permission4"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/permission3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

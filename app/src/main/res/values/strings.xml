@@ -1,0 +1,98 @@
+<resources>
+    <!--    Root   -->
+    <string name="app_name">GreenAdvisor</string>
+    <string name="app_name_login">Log in</string>
+    <string name="name">Riski Apriyanto</string>
+
+    <!--  Bottom Navigation  -->
+    <string name="nav_dashboard">Home</string>
+    <string name="nav_user">Profil</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_camera">Camera</string>
+    <string name="nav_shop">Shop</string>
+
+    <!--  item Greetings  -->
+    <string name="join_now">Bergabung Sekarang</string>
+    <string name="greetings1">greenting!</string>
+    <string name="greetings2">Welcome to the plant detector app! We are very happy to have you join us. Together, we can explore and learn more about the plant world.</string>
+
+    <!--  Greetings  -->
+    <string name="team">CAPSTONE PROJECT</string>
+    <string name="copyright_team">\@2023 GREENADVISOR. All Rights Reserved</string>
+
+    <!--  Login  -->
+    <string name="email_login">Email</string>
+    <string name="password_login">Password</string>
+    <string name="welcome_login">Selamat Datang,</string>
+    <string name="welcome_login1">Silahkan Log in menggunakan akun yang sudah ada</string>
+    <string name="contoh_email">tumbuhan@gmail.com</string>
+    <string name="contoh_password">********</string>
+    <string name="email_false">Email yang dimasukkan salah</string>
+    <string name="password_false">Password harus memiliki 8 karakter</string>
+    <string name="have_account">Belum Punya akun?</string>
+    <string name="sig_in">Daftar</string>
+    <string name="text_button_login">Login</string>
+    <string name="permission1">Dengan masuk atau mendaftar, Anda menyetujui</string>
+    <string name="permission2">Persyaratan Layanan</string>
+    <string name="permission3">dan</string>
+    <string name="permission4">Kebijakan Privasi</string>
+
+    <!--  Home  -->
+    <string name="home_ga">GA</string>
+    <string name="home_care">Care</string>
+    <string name="home_show_articles">Articles</string>
+    <string name="greetings3">Welcome %1$s,</string>
+    <string name="home_plant_care">Plant Care</string>
+    <string name="home_articles">Articles</string>
+    <string name="contoh_deskripsi">Ini adalah contoh deskripsi</string>
+    <string name="contoh_tahun">19 Mei 2023</string>
+    <string name="contoh_copyright">GreenAdvisor.com</string>\
+    <string name="home_see_all">lihat Semua</string>
+
+    <!--  Shop  -->
+    <string name="kategori">Kategori</string>
+
+    <!--  User  -->
+    <string name="user_language">Pilih Bahasa</string>
+    <string name="user_logout">Log out</string>'
+    <string name="user_syarat">Syarat &amp; Ketentuan</string>
+    <string name="user_kebijakan">Kebijakan Privasi</string>
+    <string name="user_setting_profil">Pengaturan Profil</string>
+    <string name="user_setting_safety">Pengaturan Keamanan</string>
+    <string name="beta_version">Beta Version</string>
+
+    <!--  Beta  -->
+    <string name="beta">Beta</string>
+    <string name="beta_test">Aplikasi Sedang dalam Pengembangan</string>
+
+    <!--  Detail Articles  -->
+    <string name="detail_articles">Detail Articles</string>
+
+    <!--  Register  -->
+    <string name="register_create">Silahkan Buat Akun Untuk Masuk Ke Aplikasi</string>
+    <string name="register_name">Nama</string>
+    <string name="register_input_name">Green Advisor</string>
+    <string name="register_name_error">Nama harus lebih dari 3 huruf</string>
+    <string name="register_btn">Daftar</string>
+    <string name="register_ready_account">Sudah Punya Akun?</string>
+
+    <!--  Bottom Slide  -->
+    <string name="bottom_rekomendasi">Rekomendasi Tanaman</string>
+    <string name="bottom_saran">Butuh Saran Tanaman di lokasi kamu?</string>
+    <string name="bottom_click">Klik disini</string>
+
+    <!--  Camera  -->
+    <string name="invalid">Kesalahan Dalam Perijinan Aplikasi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

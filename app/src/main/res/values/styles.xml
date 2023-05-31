@@ -1,0 +1,12 @@
+<resources>
+    <style name="Widget.Theme.GreenAdvisor.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+    </style>
+    <style name="Register">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/sfpro_display_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">@string/sig_in</item>
+        <item name="android:textColor">@color/blue_primary</item>
+    </style>
+</resources>
