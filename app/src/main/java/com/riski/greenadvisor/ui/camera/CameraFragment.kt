@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Application
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -32,12 +33,13 @@ import java.util.concurrent.Executors
 class CameraFragment : Fragment(), LifecycleOwner {
 
     private lateinit var viewModel: CameraViewModel
-    private lateinit var _binding: FragmentCameraBinding
+    private var _binding: FragmentCameraBinding? = null
     private val binding get() = _binding!!
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var previewView: PreviewView
     private lateinit var camera: Camera
     private var captureImg: ImageCapture? = null
+    private var isPreviewShown = false
     private var selectCamera: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
 
@@ -84,6 +86,14 @@ class CameraFragment : Fragment(), LifecycleOwner {
         binding.cameraFocus.setOnClickListener {
             focusCamera()
         }
+
+        if (isPreviewShown) {
+            binding.cameraPress.visibility = View.GONE
+            binding.cameraBtn.visibility = View.GONE
+            binding.cameraFocus.visibility = View.GONE
+            binding.cameraFlash.visibility = View.GONE
+            binding.cameraGalery.visibility = View.GONE
+        }
     }
 
     private fun startCamera()  {
@@ -122,6 +132,17 @@ class CameraFragment : Fragment(), LifecycleOwner {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val savedUri = outputFileResults.savedUri ?: Uri.fromFile(photoFile)
                     Toast.makeText(requireContext(),"Image Saved: $savedUri", Toast.LENGTH_SHORT).show()
+
+                    val bitmap = BitmapFactory.decodeFile(photoFile.absolutePath)
+                    binding.previewImage.setImageBitmap(bitmap)
+
+                    binding.cameraFocus.visibility = View.GONE
+                    binding.cameraGalery.visibility = View.GONE
+                    binding.cameraFlash.visibility = View.GONE
+                    binding.cameraPress.visibility = View.GONE
+                    binding.cameraBtn.visibility = View.VISIBLE
+
+                    isPreviewShown = true
                 }
 
                 override fun onError(exception: ImageCaptureException) {
