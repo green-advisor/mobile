@@ -12,6 +12,16 @@
         android:layout_height="match_parent" />
 
     <ImageView
+        android:id="@+id/previewImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
         android:id="@+id/camera_focus"
         android:layout_width="400dp"
         android:layout_height="400dp"
@@ -25,32 +35,36 @@
         android:id="@+id/camera_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Analisis"
-        android:layout_marginBottom="30dp"
+        android:text="@string/cek_plant"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="@font/sfpro_display_bold"
         app:layout_constraintBottom_toTopOf="@id/camera_press"
         app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/blue_primary"
         android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/camera_press"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/bg_circle_camera"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/ic_outline_camera_24"
-            android:layout_marginBottom="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/camera_galery"
+    <ImageView
+        android:id="@+id/camera_press"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:background="@drawable/bg_circle_camera"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_outline_camera_24"
         android:layout_marginBottom="100dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/camera_galery"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="97dp"
         android:layout_marginStart="30dp"
-        android:background="@color/white"
+        android:background="@drawable/ic_baseline_image_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -64,6 +78,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/app_name"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
