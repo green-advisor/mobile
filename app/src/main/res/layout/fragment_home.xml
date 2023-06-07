@@ -35,74 +35,59 @@
 
         <TextView
             android:id="@+id/home_profile"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:layout_marginStart="30dp"
             android:background="@drawable/circle_bg"
             android:gravity="center"
             android:text="@string/home_ga"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:elevation="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/home_camera"-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginEnd="40dp"-->
-<!--            android:layout_marginTop="45dp"-->
-<!--            android:clickable="true"-->
-<!--            android:focusable="true"-->
-<!--            android:background="@drawable/ic_circle_camera_home"-->
-<!--            android:src="@drawable/camera"-->
-<!--            android:contentDescription="@string/app_name"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+        <TextView
+            android:id="@+id/home_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/greetings3"
+            android:textSize="20sp"
+            android:fontFamily="@font/helvetica_neu_bold"
+            app:layout_constraintTop_toTopOf="@id/home_profile"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/home_profile" />
 
         <TextView
             android:id="@+id/home_greetings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="18dp"
             android:fontFamily="@font/helvetica_neu_bold"
             android:lines="1"
             android:textColor="@color/white"
             android:maxLines="1"
-            android:textSize="25sp"
+            android:textSize="17sp"
             app:layout_constraintStart_toEndOf="@id/home_profile"
-            app:layout_constraintTop_toTopOf="@id/home_profile"
+            app:layout_constraintTop_toBottomOf="@id/home_welcome"
             tools:text="@string/app_name" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/home_show_care"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="80dp"-->
-<!--            android:layout_marginEnd="120dp"-->
-<!--            android:fontFamily="@font/sfpro_display_bold"-->
-<!--            android:text="@string/home_care"-->
-<!--            android:textSize="30sp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/home_camera" />-->
+        <ImageView
+            android:id="@+id/home_notification"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_notifications_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/home_showa_rticles"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="80dp"-->
-<!--            android:layout_marginStart="100dp"-->
-<!--            android:fontFamily="@font/sfpro_display_bold"-->
-<!--            android:text="@string/home_show_articles"-->
-<!--            android:textSize="30sp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/home_camera" />-->
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_viewpager"
