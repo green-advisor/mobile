@@ -22,6 +22,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.LifecycleOwner
+import com.riski.greenadvisor.BetaActivity
 import com.riski.greenadvisor.R
 import com.riski.greenadvisor.databinding.FragmentCameraBinding
 import com.riski.greenadvisor.utils.createFile
@@ -40,7 +41,7 @@ class CameraFragment : Fragment(), LifecycleOwner {
     private lateinit var camera: Camera
     private var captureImg: ImageCapture? = null
     private var isPreviewShown = false
-    private var selectCamera: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+    private var isFlashOn = false
 
 
     @Deprecated("Deprecated in Java")
@@ -66,6 +67,8 @@ class CameraFragment : Fragment(), LifecycleOwner {
 
         previewView = binding.cameraPreview
         getPermission()
+        analysisFun()
+        flashFun()
         binding.cameraPress.setOnClickListener { takeImg() }
         return binding.root
     }
@@ -94,6 +97,39 @@ class CameraFragment : Fragment(), LifecycleOwner {
             binding.cameraFlash.visibility = View.GONE
             binding.cameraGalery.visibility = View.GONE
         }
+    }
+
+    private fun analysisFun() {
+        binding.cameraBtn.setOnClickListener {
+            startActivity(Intent(requireContext(), BetaActivity::class.java))
+        }
+    }
+
+    private fun flashFun() {
+        binding.cameraFlash.setOnClickListener {
+            if (isFlashOn) {
+               turnFlashOff()
+            } else {
+                turnFlashOn()
+            }
+        }
+    }
+
+    private fun turnFlashOn() {
+        val cameraFlash = camera.cameraControl
+        val cameraInfo = camera.cameraInfo
+        if (cameraInfo.hasFlashUnit()) {
+            cameraFlash.enableTorch(true)
+            binding.cameraFlash.setImageResource(R.drawable.ic_baseline_flash_on_24)
+            isFlashOn = true
+        }
+    }
+
+    private fun turnFlashOff() {
+        val cameraFlash = camera.cameraControl
+        cameraFlash.enableTorch(false)
+        binding.cameraFlash.setImageResource(R.drawable.ic_baseline_flash_off_24)
+        isFlashOn = false
     }
 
     private fun startCamera()  {
@@ -170,7 +206,6 @@ class CameraFragment : Fragment(), LifecycleOwner {
     }
 
     companion object {
-        private const val TAG = "CameraFragment"
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRES_PERMISSION = arrayOf(Manifest.permission.CAMERA)
     }
