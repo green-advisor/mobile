@@ -3,6 +3,7 @@
     <string name="app_name">GreenAdvisor</string>
     <string name="app_name_login">Log in</string>
     <string name="name">Riski Apriyanto</string>
+    <string name="team_id">C23-PS112</string>
 
     <!--  Bottom Navigation  -->
     <string name="nav_dashboard">Home</string>
@@ -83,6 +84,7 @@
 
     <!--  Camera  -->
     <string name="invalid">Kesalahan Dalam Perijinan Aplikasi</string>
+    <string name="cek_plant">analisis Tanaman</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
