@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.riski.greenadvisor.BetaActivity
 import com.riski.greenadvisor.R
 import com.riski.greenadvisor.data.UserData
 import com.riski.greenadvisor.data.greetings.ArticlesData
@@ -45,6 +46,7 @@ class HomeFragment : Fragment() {
         setPlantList()
         clickArticles()
         clickPlantCare()
+        notification()
 
         return root
 
@@ -61,7 +63,7 @@ class HomeFragment : Fragment() {
     private fun changeName() {
         val user = UserData(getString(R.string.name))
         val welcomeText: TextView = binding.homeGreetings
-        val welcomeMessage = getString(R.string.greetings3, user.name)
+        val welcomeMessage = user.name
         welcomeText.text = welcomeMessage
     }
 
@@ -81,6 +83,12 @@ class HomeFragment : Fragment() {
             val slideArticles = articlesList.take(3)
             val articlesAdapter = ArticlesAdapter(slideArticles as ArrayList<ArticlesData>)
             recyclerView.adapter = articlesAdapter
+        }
+    }
+
+    private fun notification() {
+        binding.homeNotification.setOnClickListener {
+            startActivity(Intent(requireContext(), BetaActivity::class.java))
         }
     }
 
