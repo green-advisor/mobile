@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -18,9 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.riski.greenadvisor.BetaActivity
-import com.riski.greenadvisor.R
 import com.riski.greenadvisor.data.Preference
-import com.riski.greenadvisor.data.UserData
 import com.riski.greenadvisor.data.greetings.ArticlesData
 import com.riski.greenadvisor.data.response.DataLogin
 import com.riski.greenadvisor.databinding.FragmentHomeBinding
@@ -50,7 +47,6 @@ class HomeFragment : Fragment() {
 //        (activity as AppCompatActivity).invalidateOptionsMenu()
         homeUserViewModel()
         setViewPager()
-        changeName()
         setArticles()
         setPlantList()
         clickArticles()
@@ -86,6 +82,7 @@ class HomeFragment : Fragment() {
                     user.token,
                     true
                 )
+                binding.homeGreetings.text = user.name
             }
         }
     }
@@ -95,14 +92,6 @@ class HomeFragment : Fragment() {
         val adapter =  HomeViewModelAdapter(this)
         viewPager.adapter = adapter
         adapter.startAutoSwipe(viewPager)
-    }
-
-    @SuppressLint("SetTextI18n")
-    private fun changeName() {
-        val user = UserData(getString(R.string.name))
-        val welcomeText: TextView = binding.homeGreetings
-        val welcomeMessage = user.name
-        welcomeText.text = welcomeMessage
     }
 
     private fun setPlantList() {
