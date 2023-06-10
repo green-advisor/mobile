@@ -37,6 +37,15 @@
     <string name="permission2">Persyaratan Layanan</string>
     <string name="permission3">dan</string>
     <string name="permission4">Kebijakan Privasi</string>
+    <string name="login_success">Berhasil Login</string>
+    <string name="login_failed">Gagal Melakukan Login</string>
+
+    <!--  Register  -->
+    <string name="regis_success">Registrasi Berhasil</string>
+    <string name="regis_failed">Registrasi Gagal</string>
+    <string name="register_password_notvalid">Harus sesuai dengan password</string>
+    <string name="register_valid_password">Ketik Ulang Password</string>
+    <string name="confirm_password">Confirm Password</string>
 
     <!--  Home  -->
     <string name="home_ga">GA</string>
@@ -61,6 +70,9 @@
     <string name="user_setting_profil">Pengaturan Profil</string>
     <string name="user_setting_safety">Pengaturan Keamanan</string>
     <string name="beta_version">Beta Version</string>
+    <string name="user_logout_ask">Apakah Yakin Ingin Keluar?</string>
+    <string name="user_logout_yes">Keluar</string>
+    <string name="user_logout_no">Batal</string>
 
     <!--  Beta  -->
     <string name="beta">Beta</string>
