@@ -6,7 +6,6 @@ import android.graphics.Canvas
 import android.graphics.Rect
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -14,7 +13,7 @@ import android.view.View
 import com.google.android.material.textfield.TextInputEditText
 import com.riski.greenadvisor.R
 
-class EditTextPassword: TextInputEditText, View.OnTouchListener {
+class EditTextPasswordLogin: TextInputEditText, View.OnTouchListener {
     private var isFocusedAndEdited = false
 
     constructor(context: Context) : super(context) {
@@ -32,7 +31,7 @@ class EditTextPassword: TextInputEditText, View.OnTouchListener {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         hint = context.getString(R.string.contoh_password)
-        transformationMethod = HideReturnsTransformationMethod.getInstance()
+        transformationMethod = PasswordTransformationMethod.getInstance()
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 
@@ -57,7 +56,7 @@ class EditTextPassword: TextInputEditText, View.OnTouchListener {
     }
 
     private fun errorInput() {
-         error = context.getString(R.string.password_false)
+        error = context.getString(R.string.password_false)
     }
 
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
