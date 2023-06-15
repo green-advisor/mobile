@@ -6,6 +6,7 @@ import android.graphics.Canvas
 import android.graphics.Rect
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import android.view.MotionEvent
@@ -24,7 +25,7 @@ class EditTextRequiredPassword: TextInputEditText, View.OnTouchListener {
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStykeAttr: Int): super(context, attrs, defStykeAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int): super(context, attrs, defStyleAttr) {
         init()
     }
 
@@ -50,7 +51,7 @@ class EditTextRequiredPassword: TextInputEditText, View.OnTouchListener {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         hint = context.getString(R.string.register_valid_password)
-        transformationMethod = PasswordTransformationMethod.getInstance()
+        transformationMethod = HideReturnsTransformationMethod.getInstance()
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 
