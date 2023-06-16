@@ -1,5 +1,7 @@
 package com.riski.greenadvisor.ui.detail.detailarticles
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -11,8 +13,10 @@ import com.riski.greenadvisor.utils.ArticlesDataList
 class DetailArticlesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailArticlesBinding
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDetailArticlesBinding.inflate(layoutInflater)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         supportActionBar?.apply {

@@ -1,5 +1,7 @@
 package com.riski.greenadvisor.ui.detail.showlist
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -15,8 +17,10 @@ class DetailShowListArticlesActivity : AppCompatActivity() {
     private lateinit var detailarticlesViewModel: DetailShowListArticlesViewModel
     private lateinit var adapter: DetailShowListArticlesAdaptor
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDetailShowListArticlesBinding.inflate(layoutInflater)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
