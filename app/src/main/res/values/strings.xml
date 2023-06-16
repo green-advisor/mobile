@@ -1,38 +1,44 @@
 <resources>
     <!--    Root   -->
     <string name="app_name">GreenAdvisor</string>
-    <string name="app_name_login">Log in</string>
-    <string name="name">Riski Apriyanto</string>
-    <string name="team_id">C23-PS112</string>
+    <string name="app_name_login" translatable="false">Log in</string>
+    <string name="name" translatable="false">Riski Apriyanto</string>
+    <string name="team_id" translatable="false">C23-PS112</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="camera" translatable="false">Camera</string>
+    <string name="maps" translatable="false">Maps</string>
+    <string name="shop" translatable="false">Shop</string>
+    <string name="user" translatable="false">User</string>
+    <string name="judul_articles">Judul Articles</string>
 
     <!--  Bottom Navigation  -->
-    <string name="nav_dashboard">Home</string>
+    <string name="nav_dashboard" translatable="false">Home</string>
     <string name="nav_user">Profil</string>
-    <string name="nav_map">Map</string>
-    <string name="nav_camera">Camera</string>
-    <string name="nav_shop">Shop</string>
+    <string name="nav_map" translatable="false">Map</string>
+    <string name="nav_camera" translatable="false">Camera</string>
+    <string name="nav_shop" translatable="false">Shop</string>
 
     <!--  item Greetings  -->
     <string name="join_now">Bergabung Sekarang</string>
-    <string name="greetings1">greenting!</string>
-    <string name="greetings2">Welcome to the plant detector app! We are very happy to have you join us. Together, we can explore and learn more about the plant world.</string>
+    <string name="greetings1" translatable="false">greenting!</string>
+    <string name="greetings2" translatable="false">Welcome to the plant detector app! We are very happy to have you join us. Together, we can explore and learn more about the plant world.</string>
 
     <!--  Greetings  -->
-    <string name="team">CAPSTONE PROJECT</string>
-    <string name="copyright_team">\@2023 GREENADVISOR. All Rights Reserved</string>
+    <string name="team" translatable="false">CAPSTONE PROJECT</string>
+    <string name="copyright_team" translatable="false">\@2023 GREENADVISOR. All Rights Reserved</string>
 
     <!--  Login  -->
-    <string name="email_login">Email</string>
-    <string name="password_login">Password</string>
+    <string name="email_login" translatable="false">Email</string>
+    <string name="password_login" translatable="false">Password</string>
     <string name="welcome_login">Selamat Datang,</string>
     <string name="welcome_login1">Silahkan Log in menggunakan akun yang sudah ada</string>
-    <string name="contoh_email">tumbuhan@gmail.com</string>
-    <string name="contoh_password">********</string>
+    <string name="contoh_email" translatable="false">Capstone2023@gmail.com</string>
+    <string name="contoh_password" translatable="false">********</string>
     <string name="email_false">Email yang dimasukkan salah</string>
     <string name="password_false">Password harus memiliki 8 karakter</string>
     <string name="have_account">Belum Punya akun?</string>
     <string name="sig_in">Daftar</string>
-    <string name="text_button_login">Login</string>
+    <string name="text_button_login" translatable="false">Login</string>
     <string name="permission1">Dengan masuk atau mendaftar, Anda menyetujui</string>
     <string name="permission2">Persyaratan Layanan</string>
     <string name="permission3">dan</string>
@@ -45,47 +51,49 @@
     <string name="regis_failed">Registrasi Gagal</string>
     <string name="register_password_notvalid">Harus sesuai dengan password</string>
     <string name="register_valid_password">Ketik Ulang Password</string>
-    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
 
     <!--  Home  -->
-    <string name="home_ga">GA</string>
-    <string name="home_care">Care</string>
-    <string name="home_show_articles">Articles</string>
-    <string name="greetings3">Welcome,</string>
-    <string name="home_plant_care">Plant Care</string>
-    <string name="home_articles">Articles</string>
-    <string name="contoh_deskripsi">Ini adalah contoh deskripsi</string>
-    <string name="contoh_tahun">19 Mei 2023</string>
-    <string name="contoh_copyright">GreenAdvisor.com</string>\
+    <string name="home_ga" translatable="false">GA</string>
+    <string name="home_care" translatable="false">Care</string>
+    <string name="home_show_articles" translatable="false">Articles</string>
+    <string name="greetings3" translatable="false">Welcome,</string>
+    <string name="home_plant_care" translatable="false">Plant Care</string>
+    <string name="home_articles" translatable="false">Articles</string>
+    <string name="contoh_deskripsi" translatable="false">Ini adalah contoh deskripsi</string>
+    <string name="contoh_tahun" translatable="false">19 Mei 2023</string>
+    <string name="contoh_copyright" translatable="false">GreenAdvisor.com</string>\
     <string name="home_see_all">lihat Semua</string>
 
     <!--  Shop  -->
-    <string name="kategori">Kategori</string>
+    <string name="recommendation">Rekomendasi Pembelian</string>
+    <string name="price" translatable="false">Rp:</string>
+    <string name="market">Pembelian</string>
 
     <!--  User  -->
     <string name="user_language">Pilih Bahasa</string>
-    <string name="user_logout">Log out</string>'
+    <string name="user_logout">Keluar</string>'
     <string name="user_syarat">Syarat &amp; Ketentuan</string>
     <string name="user_kebijakan">Kebijakan Privasi</string>
     <string name="user_setting_profil">Pengaturan Profil</string>
     <string name="user_setting_safety">Pengaturan Keamanan</string>
-    <string name="beta_version">Beta Version</string>
-    <string name="user_logout_ask">Apakah Yakin Ingin Keluar?</string>
+    <string name="beta_version" translatable="false">Beta Version</string>
+    <string name="user_logout_ask">Yakin ingin Keluar?</string>
     <string name="user_logout_yes">Keluar</string>
     <string name="user_logout_no">Batal</string>
 
     <!--  Beta  -->
-    <string name="beta">Beta</string>
+    <string name="beta" translatable="false">Beta</string>
     <string name="beta_test">Aplikasi Sedang dalam Pengembangan</string>
 
     <!--  Detail Articles  -->
-    <string name="detail_articles">Detail Articles</string>
+    <string name="detail_articles" translatable="false">Detail Articles</string>
 
     <!--  Register  -->
     <string name="register_create">Silahkan Buat Akun Untuk Masuk Ke Aplikasi</string>
-    <string name="register_name">Nama</string>
-    <string name="register_input_name">Green Advisor</string>
-    <string name="register_name_error">Nama harus lebih dari 3 huruf</string>
+    <string name="register_name">Nama Panjang</string>
+    <string name="register_input_name" translatable="false">Green Advisor</string>
+    <string name="register_name_error">Nama harus lebih dari 8 huruf</string>
     <string name="register_btn">Daftar</string>
     <string name="register_ready_account">Sudah Punya Akun?</string>
 
@@ -97,16 +105,30 @@
     <!--  Camera  -->
     <string name="invalid">Kesalahan Dalam Perijinan Aplikasi</string>
     <string name="cek_plant">analisis Tanaman</string>
+    <string name="camera_deseasse">Camera Pendeteksi Penyakit Tanaman</string>
+    <string name="camera_detect">Camera Pendeteksi Tanaman</string>
+    <string name="cek_deseasse">Analisis Penyakit</string>
+    <string name="camera2">Penyakit</string>
+    <string name="camera1">Tanaman</string>
+    <string name="choose_image">Pilih Image</string>
+    <string name="camera_success">Berhasil Di analisis</string>
+    <string name="camera_fail">Gagal Menganalisis Tanaman</string>
+    <string name="no_data_camera">Data Tanaman Tidak Tersedia</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <!--  Menu Keranjang  -->
+    <string name="menu_keranjang">Keranjang</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!--  Detail Shop  -->
+    <string name="detail_shop_name">Detail Shop</string>
+
+    <!--  Detail List Map  -->
+    <string name="detail_list_map" translatable="false">List Plant</string>
+    <string name="iklim">Iklim Tanaman:</string>
+
+    <!--  Detail Camera Detect  -->
+    <string name="detail_camera_detect">Detail Tanaman</string>
+    <string name="detail_detect_camera_care">Cara Perawatan</string>
+    <string name="name_plant">Nama Tanaman</string>
+    <string name="description">Deskripsi Tanaman</string>
+
 </resources>
