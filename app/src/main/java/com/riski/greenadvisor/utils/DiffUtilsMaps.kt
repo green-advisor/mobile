@@ -1,18 +1,18 @@
 package com.riski.greenadvisor.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.riski.greenadvisor.data.greetings.ArticlesData
+import com.riski.greenadvisor.data.response.DataItemMaps
 
-class DiffUtilsArticles(private val mOldList: List<ArticlesData>, private val mNewList: List<ArticlesData>) : DiffUtil.Callback() {
+class DiffUtilsMaps(private val mOldList: List<DataItemMaps>, private val mNewList: List<DataItemMaps>) : DiffUtil.Callback() {
     override fun getOldListSize() = mOldList.size
     override fun getNewListSize() = mNewList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
-        mOldList[oldItemPosition].judul == mNewList[newItemPosition].judul
+        mOldList[oldItemPosition].namaTanaman == mNewList[newItemPosition].namaTanaman
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldItem = mOldList[oldItemPosition]
         val newItem = mNewList[newItemPosition]
-        return oldItem.judul == newItem.judul
+        return oldItem.namaTanaman == newItem.namaTanaman
     }
 }
