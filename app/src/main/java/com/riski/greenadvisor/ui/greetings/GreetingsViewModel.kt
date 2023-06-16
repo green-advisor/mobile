@@ -33,6 +33,10 @@ class GreetingsViewModel(application: Application) : AndroidViewModel(applicatio
 
         if (!joinStatus) {
             setJoinStatus(context, true)
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+            (context as Activity).finish()
         } else {
             val intent = Intent(context, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

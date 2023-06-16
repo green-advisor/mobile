@@ -1,8 +1,7 @@
 package com.riski.greenadvisor.ui.greetings
 
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.riski.greenadvisor.R
 import com.riski.greenadvisor.databinding.ActivityGreetingsBinding
-import com.riski.greenadvisor.ui.login.LoginActivity
 import kotlin.math.roundToInt
 
 @Suppress("NAME_SHADOWING")
@@ -23,8 +21,10 @@ class GreetingsActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var greetingsViewModel: GreetingsViewModel
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityGreetingsBinding.inflate(layoutInflater)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         supportActionBar?.hide()
@@ -34,7 +34,7 @@ class GreetingsActivity : AppCompatActivity() {
 
     }
 
-    fun setupViewPagerWithIndicator() {
+    private fun setupViewPagerWithIndicator() {
         viewPager = binding.greetingsViewpager2
         val indicatorLayout = binding.indicatorLayout
         val adapter = GreetingsAdapter(greetingsViewModel)
@@ -77,7 +77,7 @@ class GreetingsActivity : AppCompatActivity() {
         })
     }
 
-    fun Int.dpToPx(): Int {
+    private fun Int.dpToPx(): Int {
         val density =  Resources.getSystem().displayMetrics.density
         return (this * density).roundToInt()
     }
