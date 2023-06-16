@@ -1,9 +1,14 @@
 package com.riski.greenadvisor.ui.register
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -24,9 +29,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var registerViewModel: RegisterViewModel
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(binding.root)
         supportActionBar?.hide()
 
@@ -36,6 +43,7 @@ class RegisterActivity : AppCompatActivity() {
         btnRegister()
         progressBar()
         readyAccount()
+        changeLanguage()
     }
 
     private fun regisViewModel() {
@@ -46,12 +54,19 @@ class RegisterActivity : AppCompatActivity() {
     private fun readyAccount() {
         binding.registerReady.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+            finish()
         }
     }
 
     private fun buttonEnabled() {
         binding.registerBtn.isEnabled = binding.registerEmailInput.text.toString().isNotEmpty() && binding.registerPasswordInput.text.toString().isNotEmpty() && binding.registerConfirmPassword.text.toString().isNotEmpty()
                 && binding.registerPasswordInput.text.toString().length >= 8 && binding.registerConfirmPassword.text.toString().length >=8 && mailValid(binding.registerEmailInput.text.toString())
+    }
+
+    private fun changeLanguage() {
+        binding.registerLanguageFab.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+        }
     }
 
     private fun editText() {
@@ -104,16 +119,22 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.registerEmailInput.text.toString()
             val password = binding.registerPasswordInput.text.toString()
             val cPassword = binding.registerConfirmPassword.text.toString()
+            blur()
 
             registerViewModel.register(name, email, password, cPassword)
             registerViewModel.response.observe(this@RegisterActivity) { register->
                 if (register != null) {
                     if (register.success) {
                         progressBar()
+                        binding.registerSuccess.visibility = View.VISIBLE
+                        binding.registerSuccess.playAnimation()
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            startActivity(Intent(this, LoginActivity::class.java))
+                            finish()
+                        },2000L)
                         Toast.makeText(this@RegisterActivity, getString(R.string.regis_success), Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, LoginActivity::class.java))
-                        finish()
                     } else {
+                        noBlur()
                         progressBar()
                         Toast.makeText(this@RegisterActivity, getString(R.string.regis_failed), Toast.LENGTH_SHORT).show()
                     }
@@ -127,10 +148,44 @@ class RegisterActivity : AppCompatActivity() {
             binding.apply {
                 if (it) {
                     registerLoading.visibility = View.VISIBLE
+                    registerBtn.visibility = View.GONE
                 } else {
                     registerLoading.visibility = View.GONE
+                    registerBtn.visibility = View.VISIBLE
                 }
             }
         }
+    }
+
+    private fun blur() {
+        binding.registerImage.alpha = 0.3f
+        binding.registerLogin.alpha = 0.3f
+        binding.registerLogin1.alpha = 0.3f
+        binding.registerName.alpha = 0.3f
+        binding.registerNameInput.alpha = 0.3f
+        binding.registerEmail.alpha = 0.3f
+        binding.registerEmailInput.alpha = 0.3f
+        binding.registerPassword.alpha = 0.3f
+        binding.registerPasswordInput.alpha = 0.3f
+        binding.registerConfirmPasswordText.alpha = 0.3f
+        binding.registerConfirmPassword.alpha = 0.3f
+        binding.registerReady.alpha = 0.3f
+        binding.registerBtn.alpha = 0.3f
+    }
+
+    private fun noBlur() {
+            binding.registerImage.alpha = 1f
+            binding.registerLogin.alpha = 1f
+            binding.registerLogin1.alpha = 1f
+            binding.registerName.alpha = 1f
+            binding.registerNameInput.alpha = 1f
+            binding.registerEmail.alpha = 1f
+            binding.registerEmailInput.alpha = 1f
+            binding.registerPassword.alpha = 1f
+            binding.registerPasswordInput.alpha = 1f
+            binding.registerConfirmPasswordText.alpha = 1f
+            binding.registerConfirmPassword.alpha = 1f
+            binding.registerReady.alpha = 1f
+            binding.registerBtn.alpha = 1f
     }
 }
