@@ -1,9 +1,11 @@
+@file:Suppress("DEPRECATION")
+
 package com.riski.greenadvisor.ui.home
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +24,6 @@ import com.riski.greenadvisor.data.greetings.ArticlesData
 import com.riski.greenadvisor.data.response.DataLogin
 import com.riski.greenadvisor.databinding.FragmentHomeBinding
 import com.riski.greenadvisor.ui.detail.showlist.DetailShowListArticlesActivity
-import com.riski.greenadvisor.ui.detail.showlist.DetailShowListPlantActivity
 import com.riski.greenadvisor.ui.home.adapter.ArticlesAdapter
 import com.riski.greenadvisor.ui.home.adapter.HomeViewModelAdapter
 import com.riski.greenadvisor.ui.home.adapter.PlantCareAdapter
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var homeViewModel: HomeViewModel
 
+    @Suppress("DEPRECATION")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -53,6 +55,12 @@ class HomeFragment : Fragment() {
         clickPlantCare()
         notification()
         userLogin()
+
+
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("IS_LOGIN", true)
+        editor.apply()
 
 
         return root
@@ -121,19 +129,13 @@ class HomeFragment : Fragment() {
 
     private fun clickPlantCare() {
         binding.homeSeeAllPlant.setOnClickListener {
-            startActivity(Intent(requireContext(), DetailShowListPlantActivity::class.java))
+            startActivity(Intent(requireContext(), BetaActivity::class.java))
         }
     }
 
     private fun clickArticles() {
         binding.homeSeeAllArticles.setOnClickListener {
-            val intent = Intent(requireContext(), DetailShowListArticlesActivity::class.java)
-            startActivity(intent)
+                startActivity(Intent(requireContext(), DetailShowListArticlesActivity::class.java))
+            }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
