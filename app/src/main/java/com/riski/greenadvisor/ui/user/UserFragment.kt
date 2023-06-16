@@ -30,7 +30,10 @@ class UserFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         binding=  FragmentUserBinding.inflate(inflater, container,false)
-        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.apply {
+            title = getString(R.string.user)
+            show()
+        }
         val rootView = binding.root
         userViewModel()
         settingProfile()
