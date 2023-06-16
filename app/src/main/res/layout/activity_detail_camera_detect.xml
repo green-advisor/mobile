@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.detail.detailcamera.DetailCameraDetectActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/detail_camera_detect_image"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        tools:src="@drawable/greetings1"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_plant"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_image"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_name_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_deskripsi_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_name"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_deskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contoh_deskripsi"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_deskripsi_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_care_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_deskripsi"
+        android:text="@string/detail_detect_camera_care"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_camera_detect_care"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contoh_deskripsi"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_camera_detect_care_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.camera.CameraFragment">
+    tools:context=".ui.camera.CameraDeseasseActivity">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"
-        android:layout_height="850dp" />
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/previewImage"
@@ -20,26 +20,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/camera_loading"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:visibility="gone"
-        tools:visibility="visible"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/loading"
-        app:lottie_loop="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
     <ImageView
         android:id="@+id/camera_focus"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:src="@drawable/focus_camera"
+        android:src="@drawable/focus_camera_red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,11 +34,11 @@
         android:id="@+id/camera_update_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/camera_detect"
+        android:text="@string/camera_deseasse"
+        android:textColor="@color/white"
         android:fontFamily="@font/sfpro_display_regular"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -62,19 +47,15 @@
     <Button
         android:id="@+id/camera_btn"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="@string/cek_plant"
-        android:layout_marginBottom="140dp"
-        android:background="@drawable/corner_radius"
+        android:layout_height="wrap_content"
+        android:text="@string/cek_deseasse"
+        android:layout_marginBottom="100dp"
         android:fontFamily="@font/sfpro_display_bold"
         app:layout_constraintBottom_toTopOf="@id/camera_press"
         app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/blue_primary"
         android:visibility="gone"
         tools:visibility="visible"
-        android:elevation="10dp"
-        android:focusable="true"
-        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -83,7 +64,7 @@
         android:layout_height="70dp"
         android:background="@drawable/bg_circle_camera"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/ic_outline_camera_24"
+        android:src="@drawable/ic_outline_camera_24"
         android:layout_marginBottom="100dp"
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,40 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-   <TextView
-       android:id="@+id/camera_change1"
-       android:layout_width="100dp"
-       android:layout_height="40dp"
-       android:text="@string/camera1"
-       android:fontFamily="@font/sfpro_display_regular"
-       android:textStyle="bold"
-       android:textSize="20sp"
-       android:textColor="@color/white"
-       android:focusable="true"
-       android:clickable="true"
-       android:gravity="center"
-       android:layout_marginBottom="15dp"
-       app:layout_constraintBottom_toTopOf="@id/camera_press"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/camera_change2"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="@string/camera2"
-        android:fontFamily="@font/sfpro_display_regular"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:focusable="true"
-        android:clickable="true"
-        android:gravity="center"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@id/camera_change1"
-        app:layout_constraintTop_toTopOf="@id/camera_change1" />
-
-
     <ImageView
         android:id="@+id/camera_flash"
         android:layout_width="40dp"
@@ -144,5 +91,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/camera_change1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="@string/camera2"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:focusable="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/camera_press"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/camera_change2"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="@string/camera1"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/camera_change1"
+        app:layout_constraintTop_toTopOf="@id/camera_change1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

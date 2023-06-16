@@ -2,33 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-    <ProgressBar
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/login_loading"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="43dp"
-        android:indeterminateTint="@color/lime_green"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:visibility="gone"
+        tools:visibility="visible"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_loop="true"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/login_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="50dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/login__language_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/login"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_language_24"
+        app:backgroundTint="@color/teal_200"
+        app:layout_anchor="@id/content_layout"
+        app:layout_anchorGravity="bottom|end"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/login_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/login"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -80,6 +97,7 @@
         android:minHeight="47dp"
         android:paddingStart="10dp"
         android:paddingEnd="5dp"
+        android:inputType="textEmailAddress"
         android:textColorHint="#757575"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +116,7 @@
         app:layout_constraintStart_toStartOf="@id/login_password"
         app:layout_constraintTop_toBottomOf="@id/login_email" />
 
-    <com.riski.greenadvisor.customview.EditTextPassword
+    <com.riski.greenadvisor.customview.EditTextPasswordLogin
         android:id="@+id/login_password"
         android:layout_width="355dp"
         android:layout_height="55dp"
@@ -111,6 +129,7 @@
         android:minHeight="47dp"
         android:paddingStart="10dp"
         android:paddingEnd="5dp"
+        android:inputType="textPassword"
         android:textColorHint="#757575"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

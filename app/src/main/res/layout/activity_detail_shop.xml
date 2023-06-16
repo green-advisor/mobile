@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.detail.detailshop.DetailShopActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/detail_shop_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        tools:src="@drawable/greetings1"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_shop_name"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/app_name"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:textSize="23sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_shop_image"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_shop_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contoh_tahun"
+        android:textSize="18sp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_shop_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/detail_shop_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contoh_deskripsi"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_shop_price"
+        app:layout_constraintBottom_toTopOf="@id/detail_shop_btn" />
+
+    <Button
+        android:id="@+id/detail_shop_btn"
+        android:layout_width="168dp"
+        android:layout_height="50dp"
+        android:text="@string/market"
+        android:textSize="15sp"
+        android:fontFamily="@font/sfpro_display_regular"
+        android:textColor="@color/white"
+        android:background="@drawable/corner_radius"
+        android:layout_marginEnd="30dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:elevation="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="35dp"
+        android:translationZ="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_shop_deskripsi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
