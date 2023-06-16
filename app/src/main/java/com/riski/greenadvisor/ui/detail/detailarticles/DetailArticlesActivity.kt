@@ -28,7 +28,7 @@ class DetailArticlesActivity : AppCompatActivity() {
 
     }
 
-
+    @Suppress("DEPRECATION")
     private fun setArticles() {
         val detail = intent.getParcelableExtra<ArticlesData>(EXTRA_ARTICLES)
         if (detail != null) {
