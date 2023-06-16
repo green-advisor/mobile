@@ -1,5 +1,6 @@
 package com.riski.greenadvisor.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.riski.greenadvisor.ui.detail.detailarticles.DetailArticlesActivity
 
 class ArticlesAdapter(private val articlesList: ArrayList<ArticlesData>) : RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemArticlesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder(view)
