@@ -3,17 +3,9 @@ package com.riski.greenadvisor.ui.detail.detailshop
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.view.View
-import androidx.activity.viewModels
-import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import com.riski.greenadvisor.R
 import com.riski.greenadvisor.data.response.DataItem
@@ -21,8 +13,6 @@ import com.riski.greenadvisor.databinding.ActivityDetailShopBinding
 
 class DetailShopActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDetailShopBinding
-    private val viewModel: DetailShopViewModel by viewModels()
-    private lateinit var detailLiveData: MutableLiveData<DataItem>
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +28,7 @@ class DetailShopActivity : AppCompatActivity() {
         setDetailShop()
     }
 
+    @Suppress("DEPRECATION")
     private fun setDetailShop() {
         val detail = intent.getParcelableExtra<DataItem>(EXTRA_SHOP)
         if (detail != null) {
