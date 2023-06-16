@@ -147,16 +147,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_have" />
 
-<!--    <com.riski.greenadvisor.customview.ButtonLogin-->
-<!--        android:id="@+id/login_button"-->
-<!--        android:layout_width="355dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:textAllCaps="false"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/login_password" />-->
-
         <TextView
         android:id="@+id/login_have"
         style="@style/Register"
@@ -167,28 +157,6 @@
         android:text="@string/have_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_password" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/login_have"-->
-<!--        style="@style/Register"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="@string/have_account"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/login_button" />-->
-
-
-<!--    <TextView-->
-<!--            android:id="@+id/login_sig"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            style="@style/Register"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/login_have"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
 
     <TextView
         android:layout_width="wrap_content"
