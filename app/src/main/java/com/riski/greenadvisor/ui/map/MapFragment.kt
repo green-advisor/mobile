@@ -14,54 +14,85 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.riski.greenadvisor.R
+import com.riski.greenadvisor.data.Preference
+import com.riski.greenadvisor.data.response.DataLogin
 import com.riski.greenadvisor.databinding.FragmentMapBinding
-import com.riski.greenadvisor.ui.detail.detailarticles.DetailArticlesActivity
-import com.riski.greenadvisor.ui.detail.showlist.DetailShowListArticlesActivity
-import com.riski.greenadvisor.ui.home.adapter.ArticlesAdapter
+import com.riski.greenadvisor.ui.detail.detailmaps.DetailListMapPlant
+import com.riski.greenadvisor.ui.home.HomeViewModel
+import com.riski.greenadvisor.ui.home.HomeViewModelFactory
+import com.riski.greenadvisor.ui.home.dataStore
 
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore("settings")
 class MapFragment : Fragment(), OnMapReadyCallback {
 
     private val _binding: FragmentMapBinding by lazy {
         FragmentMapBinding.inflate(layoutInflater)
     }
+    private lateinit var dataStore: DataStore<Preferences>
     private lateinit var mMap: GoogleMap
     private lateinit var bottomSlide: View
     private var isLocation: Boolean = false
     private lateinit var rootView: View
+    private lateinit var user : DataLogin
     private lateinit var bottomClick: TextView
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val mapViewModel = ViewModelProvider(this)[MapViewModel::class.java]
         rootView = _binding.root
-        (activity as AppCompatActivity).supportActionBar?.show()
-
+        (activity as AppCompatActivity).supportActionBar?.apply {
+            title = getString(R.string.maps)
+            show()
+        }
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
         bottomSlide = inflater.inflate(R.layout.bottom_slide_layout_map, container, false)
 
         (rootView.parent as? ViewGroup)?.removeView(rootView)
+
+        homeViewModel1()
+
         return rootView
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+
         getMyLocation()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        dataStore = requireContext().dataStore
+    }
+
+    private fun homeViewModel1() {
+        homeViewModel = ViewModelProvider(this, HomeViewModelFactory(Preference.getInstance(dataStore), requireContext()))[HomeViewModel::class.java]
+
+        homeViewModel.getUser().observe(requireActivity()) {
+            user = DataLogin(
+                it.name,
+                it.token,
+                true
+            )
+        }
     }
 
     private val requestPermissionLauncher =
@@ -116,7 +147,13 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         bottomSlide.setOnTouchListener { v, event -> true }
         bottomClick = bottomSlide.findViewById(R.id.bottom_plant)
         bottomClick.setOnClickListener {
-            startActivity(Intent(requireContext(), DetailShowListArticlesActivity::class.java))
+            val latitude = mMap.cameraPosition.target.latitude
+            val longitude = mMap.cameraPosition.target.longitude
+
+            val intent = Intent(requireContext(), DetailListMapPlant::class.java)
+            intent.putExtra("latitude", latitude)
+            intent.putExtra("longitude", longitude)
+            startActivity(intent)
         }
     }
 
